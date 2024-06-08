@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    About Us
+{% endblock title %}
+
+{% block sidenav %}
+    {% for item in item_list %}
+     <li class="nav-item mb-2">
+       <a href="{{ item.link }}"> {{ item.item }} </a>
+     </li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+    <h1>About Us</h1>
+
+    <aside>
+        <p>
+            We are CS3337 Spring 2024 Group 1 consisting of:
+        </p>
+    </aside>
+
+    <!-- Angel Gaytan, Emily Ayala, Arturo Gonzalez, Anderson Pena Reyes, Juan Romero, Matthew Sanchez -->
+    <div class="d-flex align-items-center row justify-content-around">
+        <div class="col-sm-6 col-lg-3 mb-0">
+            <div class="card border-primary shadow p-3" style="width: 18rem">
+                <div class="cardbody">
+                    <img class="img-fluid" src="{% static 'calstatela-shield.png' %}" height="300"/>
+                    <h5 class="card-subtitle">Angel Gaytan</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 mb-0">
+            <div class="card border-primary shadow p-3" style="width: 18rem">
+                <div class="cardbody">
+                    <img class="img-fluid" src="{% static 'calstatela-shield.png' %}" height="300"/>
+                    <h5 class="card-subtitle">Emily Ayala</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 mb-0">
+            <div class="card border-primary shadow p-3" style="width: 18rem">
+                <div class="cardbody">
+                    <img class="img-fluid" src="{% static 'calstatela-shield.png' %}" height="300"/>
+                    <h5 class="card-subtitle">Arturo Gonzalez</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 mb-0">
+            <div class="card border-primary shadow p-3" style="width: 18rem">
+                <div class="cardbody">
+                    <img class="img-fluid" src="{% static 'calstatela-shield.png' %}" height="300"/>
+                    <h5 class="card-subtitle">Anderson Pena Reyes</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 mb-0">
+            <div class="card border-primary shadow p-3" style="width: 18rem">
+                <div class="cardbody">
+                    <img class="img-fluid" src="{% static 'calstatela-shield.png' %}" height="300"/>
+                    <h5 class="card-subtitle">Juan Romero</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 mb-0">
+            <div class="card border-primary shadow p-3" style="width: 18rem">
+                <div class="cardbody">
+                    <img class="img-fluid" src="{% static 'calstatela-shield.png' %}" height="300"/>
+                    <h5 class="card-subtitle">Matthew Sanchez</h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}
