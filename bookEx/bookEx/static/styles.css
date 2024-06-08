@@ -1,0 +1,371 @@
+/* CSS Reset */
+body, header, nav, main, footer, img, h1, h3, ul, aside, figure, figcaption {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* Container class */
+.container{
+    width: 500px;
+}
+
+.background-container{
+    background-color: #deccba;
+    margin: auto;
+    width: 75%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 5%;
+}
+
+/* Style rules for header and body*/
+header{
+    background-color: #2a1f14;
+}
+
+body {
+	background-color: #F5EFE6;
+}
+
+/* Style rules for images*/
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/*Style rules for login section */
+.login-text{
+    font-size: 1.5em;
+}
+
+.loginbtn{
+    font-size: 0.75em;
+}
+
+/* Style rules for mobile viewport */
+/* Style rules to show mobile class and hide tab-desk class */
+.mobile, .mobile-tablet {
+    display: block;
+}
+
+.tab-desk, .desktop, #nav-links {
+    display: none;
+ }
+
+ /* Style rules for header area */
+.mobile h1{
+     padding: 2%;
+     text-align: center;
+     font-family: serif;
+     margin: 2% 0 0 3%;
+}
+
+/* Style rules for navigation area */
+nav {
+    background-color: #2a1f14;
+}
+
+.mobile-nav a {
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
+    text-decoration: none;
+    padding: 3%;
+    display: block;
+}
+
+#icon {
+    text-align: right;
+    right: 0;
+    top: 0;
+    padding: 2%
+}
+
+/* Style rules for main content */
+main {
+    padding: 2%;
+    font-family: Arial,sans-serif;
+}
+
+main h1 {
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+}
+
+main ul {
+    list-style-type: square;
+}
+
+aside {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 4px 4px 10px #c5a687;
+}
+
+figure {
+    position: relative;
+    max-width: 275px;
+    margin: 2% auto;
+    border: 8px solid #2a1f14;
+}
+
+figcaption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(192, 192, 192, 0.8);
+    color: #fff;
+    width: 100%;
+    padding: 5% 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Style rules for form elements */
+fieldset, input, textarea {
+    margin-bottom: 2%;
+}
+
+fieldset legend{
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+label {
+    display: block;
+    padding-top: 2%;
+}
+
+form #submit {
+    margin: 0 auto;
+    display: block;
+    padding: 2%;
+    color: #F5EFE6;
+    font-size: 1.25em;
+    border-radius: 10px;
+}
+
+/* Style rules for table */
+table{
+    width: 100%;
+    border: 1px solid #2a1f14;
+    border-collapse: collapse;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+td img{
+    margin: auto;
+    height: 75px;
+}
+
+caption{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 1%;
+}
+
+th, td{
+    border: 1px solid #2a1f14;
+    padding: 1%;
+}
+
+td{
+    font-color: #000;
+}
+
+th{
+    background-color: #2a1f14;
+    color: #fff;
+    font-size: 1.15em;
+    text-align: center;
+}
+
+
+tr:nth-child(odd){
+   background-color: #deccba;
+}
+
+/* Style rules for footer content */
+footer {
+    text-align: center;
+    font-size: 0.85em;
+    background-color: #2a1f14;
+    color: #F5EFE6;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+footer a {
+    color: #f3e6d8;
+    text-decoration: none;
+}
+
+/* Media Query for Tablet Viewport */
+@media screen and (min-width: 620px), print {
+
+    /* Username Style */
+    .login-text{
+        font-size: 1.5em;
+        font-family: serif;
+        font-weight: bold;
+        float: right;
+        text-align: right;
+        color: white;
+    }
+
+    /* Tablet Viewport: Show tab-desk class, hide mobile class */
+    .tab-desk{
+        display: block;
+    }
+
+    .mobile, .mobile-nav {
+        display: none;
+    }
+
+    /* Tablet Viewport: Style rules for nav area */
+    nav ul {
+        list-style-type: none;
+        text-align: center;
+    }
+
+    /* Inline image for search result */
+    nav img {
+        display: inline;
+    }
+
+    nav > li, nav > ul > li, form > li {
+        border-top: none;
+        display: inline-block;
+        font-size: 1.25em;
+        font-family: Geneva, Arial, sans-serif;
+        font-weight: bold;
+    }
+
+    nav li a {
+        padding: 0.5em;
+        display: block;
+        color: #F5EFE6;
+        text-decoration: none;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 10px;
+    }
+
+    aside {
+        grid-column: 1 / span 2;
+    }
+
+    /* Tablet Viewport: Style rule for form element */
+    form {
+        margin: 0 auto;
+    }
+
+    .btn{
+        grid-column: 1 / span 2;
+    }
+
+    .btn-color{
+        background-color: #A8422D;
+    }
+}
+
+    /* Media Query for Desktop Viewport */
+    @media screen and (min-width: 1000px), print {
+    /* Desktop Viewport: Show desktop class, hide mobile-tablet class */
+    .desktop {
+        display: block;
+    }
+
+    .mobile-tablet {
+        display: none;
+    }
+
+    /* Desktop Viewport: Style rules for nav area */
+    nav {
+        font-size: 1.5em;
+    }
+
+    nav li a:hover {
+        color: #2a1f14;
+        background-color: #F5EFE6;
+        opacity: 0.5;
+    }
+
+    /* Desktop Viewport: Style rules for main content */
+    .grid {
+        grid-template-columns: auto auto auto;
+        grid-gap: 30px;
+    }
+
+    aside {
+        grid-column: 1 / span 3;
+        font-size: 2em;
+    }
+
+    /* Desktop Viewport: Style rules for form elements */
+    form{
+        width: auto;
+    }
+
+    .form-grid{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 20px;
+    }
+}
+
+/* Media Query for Large Desktop Viewport */
+@media screen and (min-width: 1921px), print {
+	body {
+		background: linear-gradient(#F5EFE6, #78593a);
+	}
+
+	#wrapper {
+		width: 1800px;
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	main {
+		background: #F5EFE6;
+	}
+}
+
+/* Media Query for Print */
+@media print {
+	body {
+		background: #fff;
+		color: #000;
+	}
+}
+
+.favHeart{
+    border: none;
+    background-color: transparent;
+    margin: auto;
+   }
+
+.isFavorite{
+    color: red;
+}
+
+.bookImage{
+    width: 100px;
+    height: 100px;
+}
+th, tr, td{
+    padding: 0.5em;
+    text-align: center;
+}

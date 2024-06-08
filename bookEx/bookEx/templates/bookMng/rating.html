@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+   Rate Book
+{% endblock title %}
+
+{% block sidenav %}
+    {% for item in item_list %}
+     <li class="nav-item mb-2">
+       <a href="{{ item.link }}"> {{ item.item }} </a>
+     </li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+    <h1>Rate Book</h1>
+    <div class="book">
+       <h2>{{ book.name }}</h2>
+       <div id="rateYo"></div>
+       <textarea id="review" placeholder="Write a review"></textarea>
+       <a href="#" class="rate-link" onclick="saveRating({{ book.id }})">Submit Rating</a>
+    </div>
+
+    <div id="averageRatingReview">
+       <h3>Average Rating: {% if average_rating %}{{ average_rating }}{% else %}0{% endif %}</h3>
+       {% if ratings %}
+           <table>
+               <thead>
+                   <tr>
+                       <th>Stars</th>
+                       <th>Review</th>
+                       <th>Delete</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   {% for rating in ratings %}
+                       <tr id="ratingRow_{{ rating.id }}">
+                           <td>{{ rating.stars }}</td>
+                           <td>{{ rating.review }}</td>
+                           <td><button onclick="deleteRating({{ rating.id }})">Delete</button></td>
+                       </tr>
+                   {% endfor %}
+               </tbody>
+           </table>
+       {% endif %}
+    </div>
+{% endblock content %}

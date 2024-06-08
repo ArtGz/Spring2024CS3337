@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Book Ratings
+{% endblock title %}
+
+{% block sidenav %}
+    {% for item in item_list %}
+        <li class="nav-item mb-2">
+            <a href="{{ item.link }}"> {{ item.item }} </a>
+        </li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+    <h1>Rated Books</h1>
+    {% for book in books %}
+        <table class="table">
+            <tr>
+                <th>
+                    Book Name
+                </th>
+                <th>
+                    Picture
+                </th>
+                <th>
+                    Average Rating
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <a href="book_detail/{{ book.id }}">
+                        {{ book.name }}
+                    </a>
+                </td>
+                <td>
+                    <img src="{% static book.pic_path %}" height="50"/>
+                </td>
+                <td>
+                    {{ book.average_rating }}
+                </td>
+            </tr>
+            <tr>
+                <th colspan="3">
+                    Ratings and Reviews
+                </th>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <table>
+                        <tr>
+                            <th>Rating</th>
+                            <th>Review</th>
+                            <th>Delete</th>
+                        </tr>
+                        {% for rating in book.ratings %}
+                            <tr>
+                                <td>{{ rating.stars }}</td>
+                                <td>{{ rating.review }}</td>
+                                <td>
+                                    <form method="post" action="{% url 'delete_rating' rating.id %}">
+                                        {% csrf_token %}
+                                        <button class="btn btn-danger" type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <form class="col-lg-3 offset-lg-5" method="POST" action="{% url 'postrating' %}">
+            {% csrf_token %}
+            <div class="row justify-content-center">
+                <h1>Add Rating</h1>
+                <input type="hidden" name="book_id" value="{{ book.id }}">
+                <label class="" for="stars">Stars:</label>
+                <input type="number" name="stars" min="1" max="5" required>
+                <br>
+                <label for="review">Review:</label>
+                <textarea class="mb-2" name="review" required></textarea>
+                <br>
+                <button class="col-4 btn btn-primary" type="submit" value="Submit"> Submit </button>
+            </div>
+        </form>
+    {% endfor %}
+{% endblock content %}

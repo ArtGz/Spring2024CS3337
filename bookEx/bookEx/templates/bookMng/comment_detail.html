@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Comment Details
+{% endblock title %}
+
+{% block sidenav %}
+    {% for item in item_list %}
+        <li class="nav-item mb-2">
+            <a href="{{ item.link }}"> {{ item.item }} </a>
+        </li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row justify-content-md-center mb-3">
+            <div class="col col-lg-6">
+                <h1> Comment Detail</h1>
+                <table class="table table-light table-hover">
+                    <tr>
+                        <th>
+                            <b>Title</b>
+                        </th>
+                        <td>
+                            {{ comment.title }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <b>Comment</b>
+                        </th>
+                        <td>
+                            {{ comment.comment }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <b>Book</b>
+                        </th>
+                        <td>
+                            {{ comment.book }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <b>User</b>
+                        </th>
+                        <td>
+                            {{ comment.username }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

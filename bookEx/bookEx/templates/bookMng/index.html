@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Welcome
+{% endblock title %}
+
+{% block mobilenav %}
+{% endblock mobilenav %}
+
+{% block sidenav %}
+{% endblock sidenav %}
+
+{% block content %}
+    <h1>Welcome to Book Exchange System</h1>
+    <p>
+        To register <a href="{% url 'register' %}"> Click Here </a>
+    </p>
+    <p>
+        To login <a href="{% url 'login' %}?next=/home"> Click Here </a>
+    </p>
+{% endblock content %}

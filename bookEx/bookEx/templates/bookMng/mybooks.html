@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+<script>
+    import UI from './favorites.js';
+    const ui = new UI();
+    ui.isFavorite();
+</script>
+{% load static %}
+
+{% block title %}
+   My Library
+{% endblock title %}
+
+{% block mobilenav %}
+   {% for item in item_list %}
+     <li>
+       <a href="{{ item.link }}"> {{ item.item }} </a>
+     </li>
+   {% endfor %}
+{% endblock mobilenav %}
+
+{% block sidenav %}
+   {% for item in item_list %}
+     <li>
+       <a href="{{ item.link }}"> {{ item.item }} </a>
+     </li>
+   {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+   <h1> My Books </h1>
+   <table>
+       <tr>
+            <th>
+                Book Name
+            </th>
+            <th>
+                Picture
+            </th>
+            <th>
+                Rate
+            </th>
+           <th>
+               Favorite
+           </th>
+            <th class="deleteColumn">
+                Delete
+            </th>
+        </tr>
+       {% for book in books %}
+        <tr>
+            <td>
+                <a href="book_detail/{{ book.id }}" class="book-title">
+                    {{ book.name }}
+                </a>
+            </td>
+            <td>
+                <img src="{% static book.pic_path %}" height="50" class="book-image"/>
+            </td>
+            <td>
+                {{ book.average_rating }}
+            </td>
+            <td id="favoriteRow">
+                <button class="favHeart fa-regular fa-heart" data-id="{{ book.id }}"></button>
+            </td>
+            <td class="deleteColumn">
+                <a href="book_delete/{{ book.id }}">
+                    <img  src="{% static 'delete.png' %}" height="50"/>
+                </a>
+            </td>
+        </tr>
+       {% endfor %}
+   </table>
+
+{% endblock content %}
