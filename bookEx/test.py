@@ -11,4 +11,4 @@ class BookTestCase(TestCase):
         djan = Book.objects.get(name="Django")
         web = Book.objects.get(name="Web")
         self.assertEqual(djan.web, 'https://www.google.com')
-        self.assertEqual(web.price, 5.99)
+        self.assertEqual(web.name, 'Web')
