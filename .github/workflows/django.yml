@@ -27,4 +27,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python bookEx/manage.py runserver localhost:8000 --noreload --insecure
+        python bookEx/manage.py runserver --noreload --insecure
