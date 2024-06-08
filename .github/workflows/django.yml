@@ -27,4 +27,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python bookEx/manage.py runserver localhost:8000
+        python bookEx/manage.py test
